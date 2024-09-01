@@ -43,3 +43,33 @@ impl ExpenseImpl for Expense {
         fs::write("expenses.json", data).unwrap();
     }
 }
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_new_expense() {
+        let expense = Expense::new("Lunch", 10.0);
+        assert_eq!(expense.description, "Lunch");
+        assert_eq!(expense.amount, 10.0);
+    }
+
+    #[test]
+    fn test_read_expenses() {
+        let expenses = Expense::read();
+        assert_eq!(expenses.len(), 1); // 1 because we have a dummy expense in the file
+    }
+
+    #[test]
+    fn test_write_expenses() {
+        let expense = Expense::new("Dinner", 20.0);
+        Expense::write(&[expense]);
+
+        let expenses = Expense::read();
+        assert_eq!(expenses.len(), 1);
+        assert_eq!(expenses[0].description, "Dinner");
+        assert_eq!(expenses[0].amount, 20.0);
+    }
+}

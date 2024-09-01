@@ -1,14 +1,8 @@
 [
   {
-    "id": "4f0ead0e-39b1-4f76-9a7e-4e808264190c",
-    "description": "Lunch",
-    "amount": 10.0,
-    "created_at": "2024-08-31T16:31:08.709705500"
-  },
-  {
-    "id": "9694868f-bbbd-4416-a431-b70c611d5d11",
+    "id": "bfefb777-f296-469f-81d7-f3a9d63a3a80",
     "description": "Dinner",
     "amount": 20.0,
-    "created_at": "2024-08-31T16:31:26.237624400"
+    "created_at": "2024-09-01T13:39:36.987800300"
   }
 ]
